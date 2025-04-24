@@ -7,6 +7,13 @@ window.onload = function() {
 function prepareListeners() {
     // let element = document.getElementById("elementId");
     // element.addEventListener("click", someFunction);
+    const searchBarElement = document.getElementById("searchBar");
+    searchBarElement.addEventListener("submit", handleSearch);
+}
+
+function handleSearch (event) {
+  event.preventDefault(); // prevents refresh
+  // there would be search behavior here but we have nothing to search
 }
 
 // d navbar 
