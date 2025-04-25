@@ -1,5 +1,6 @@
 * {
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 html {
@@ -171,7 +172,7 @@ footer {
   /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). 
   Show the link that contains what should open and close the topnav (.icon) */
   @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child), .dropdown .dropbtn {
+    .topnav a:not(.active), .dropdown .dropbtn {
       display: none;
     }
     .topnav a.icon {
@@ -201,12 +202,10 @@ footer {
       width: 100%;
       text-align: left;
     }
-}
+  }
 
 
 /* d slideshow */  
-
-  * {box-sizing:border-box}
 
   /* Slideshow container */
   .slideshow-container {
