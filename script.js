@@ -1,13 +1,8 @@
-// Onload functions 
-window.onload = function() {
-    prepareListeners();
-}
+document.addEventListener("DOMContentLoaded", prepareListeners);
 
 // Sets up listeners
 function prepareListeners() {
-    // let element = document.getElementById("elementId");
-    // element.addEventListener("click", someFunction);
-    const searchBarElement = document.getElementById("searchBar");
+    const searchBarElement = document.getElementById("searchForm");
     searchBarElement.addEventListener("submit", handleSearch);
 }
 
