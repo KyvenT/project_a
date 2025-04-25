@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", prepareListeners);
 function prepareListeners() {
     const searchBarElement = document.getElementById("searchForm");
     searchBarElement.addEventListener("submit", handleSearch);
+    const hamburgerIcon = document.getElementById("hamburgerNavIcon");
+    hamburgerIcon.addEventListener("click", toggleNavResponsive);
 }
 
 function handleSearch (event) {
@@ -13,14 +15,14 @@ function handleSearch (event) {
 
 // d navbar 
 // Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon 
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
-    }
+function toggleNavResponsive() {
+  const x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
   }
+}
 
 // d slideshow
 

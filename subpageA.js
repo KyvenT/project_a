@@ -8,7 +8,19 @@ function prepareListeners() {
     randomCatButton.addEventListener("click", handleRandomCat);
     const searchBarElement = document.getElementById("searchForm");
     searchBarElement.addEventListener("submit", handleSearch);
+    const hamburgerIcon = document.getElementById("hamburgerNavIcon");
+    hamburgerIcon.addEventListener("click", toggleNavResponsive);
 }
+
+// Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon 
+function toggleNavResponsive() {
+    const x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
 
 function handleSearch (event) {
   event.preventDefault(); // prevents refresh
