@@ -13,19 +13,23 @@ body {
 }
 
 main {
-  margin: 1.75rem 24rem;
+  margin: 1rem 30rem;
   background-color: rgb(11,11,12);
   padding: 2rem 10rem;
   border-radius: .25rem;
   box-shadow: rgba(0, 0, 0, 0) 0px 3px 8px;
   color: white;
-  width:60%;
+  width:50%;
   border: solid 0.1rem #3d3d3d;
 }
 
 h1 {
   color: white;
   text-shadow: 1px 1px 4px black;
+}
+
+h1 + p {
+  color: #dddddd;
 }
 
 footer {
@@ -39,13 +43,14 @@ footer {
   border: solid 0.1rem #3d3d3d;
 }
 
-p {
-  color:white;
+main > p {
+color:#dddddd;
 }
 
 blockquote {
   padding: 0.1rem;
   margin: 0.1rem 7rem;
+  color: #dddddd;
 }
 
 .header {
@@ -326,7 +331,7 @@ blockquote {
   }
 
   .mainSideNav {
-    margin: 1.75rem 5rem;
+    margin: 1rem 1rem 1rem 14rem;
     position: sticky;
     top: 4rem;
     bottom: auto;
@@ -364,7 +369,7 @@ blockquote {
   }
 
   .blockquoteCaption {
-    color: white;
+    color: #dddddd;
     text-align: center;
     font-size: 90%;
   }
