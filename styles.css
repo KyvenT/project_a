@@ -343,7 +343,7 @@ blockquote {
   }
 
   .mainSideNav a {
-    color: white;
+    color: #dddddd;
     text-decoration: none;
     display: block;
     margin: 0rem;
@@ -354,7 +354,7 @@ blockquote {
   }
 
   .mainSideNav a:hover {
-    color: #bbb;
+    color: white;
     text-shadow: none;
     text-decoration: underline;
     border-right: 2px solid #a96cd1;
