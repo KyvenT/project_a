@@ -10,6 +10,8 @@ html {
 
 body {
   background-color: rgb(6,6,7);
+  margin: unset;
+
 }
 
 main {
@@ -39,8 +41,7 @@ footer {
   text-align: center;
   color: white;
   box-shadow: rgba(0, 0, 0, 0) 0px 3px 8px;
-  border-radius: .25rem;
-  border: solid 0.1rem #3d3d3d;
+  border-top: solid 0.1rem #3d3d3d;
 }
 
 main > p {
@@ -59,9 +60,6 @@ blockquote {
   padding: 1rem;
   margin: auto;
   text-align: center;
-  border-radius: .25rem 0.25rem 0 0;
-  border: solid 0.1rem #3d3d3d;
-  border-bottom: none;
 }
 
 /* d navbar */
@@ -83,7 +81,7 @@ blockquote {
   .topnav a {
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 30px;
     text-decoration: none;
     font-size: 17px;
   }
@@ -331,33 +329,35 @@ blockquote {
   }
 
   .mainSideNav {
-    margin: 1rem 1rem 1rem 14rem;
+    margin: 1rem 2rem 1rem 12%;
     position: sticky;
     top: 4rem;
     bottom: auto;
     width: 14.5rem;
     border-radius: .25rem;
     text-align: center;
-    background-color: rgb(11,11,12);
+    background-color: rgb(6,6,7);
     padding: 1rem;
-    line-height: 3.5rem;
+    line-height: 4rem;
     float:left;
-    border: solid 0.1rem #3d3d3d;
   }
 
   .mainSideNav a {
     color: white;
     text-decoration: none;
     display: block;
-    margin: -0.35rem;
+    margin: 0rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    border-radius: 0.25rem;
+    text-align: right;
+    padding: 0.25em 1rem;
+    border-right: 2px solid #311f3d;
   }
 
   .mainSideNav a:hover {
-    background: #311f3d;
-    color: white;
+    color: #bbb;
     text-shadow: none;
+    text-decoration: underline;
+    border-right: 2px solid #a96cd1;
   }
 
   .largeFontSize {
