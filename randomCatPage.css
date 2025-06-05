@@ -4,18 +4,20 @@
 }
 
 html {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-color: #444;
+  background-color: rgb(6,6,7);
 }
 
 main {
     margin: 1rem 10rem;
-    background-color: #888;
+    background-color: rgb(11,11,12);
     padding: .25rem 2.5rem;
     border-radius: .25rem;
+    border: solid 0.1rem #3d3d3d;
+    box-shadow: rgba(0, 0, 0, 0) 0px 3px 8px;
 }
 
 .footer {
@@ -61,7 +63,9 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: #333;
+    background-color: rgb(11,11,12);
+    border: solid 0.1rem #3d3d3d;
+    box-shadow: rgba(0, 0, 0, 1) 0px 0.9px 3px;
 }
 
 .navLinks {
@@ -78,12 +82,12 @@ main {
 }
 
 .navLink:hover {
-    background-color: #555;
+    background-color: #311f3d;
 }
 
 .navLink:active {
     color: white;
-    background-color: #777;
+    background-color: #5d4171;
 }
 
 #searchForm {
@@ -108,7 +112,7 @@ main {
 
 /* Add an active class to highlight the current page */
 .active {
-    background-color: #888888;
+    background-color: #4c325e;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
