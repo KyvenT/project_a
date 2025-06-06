@@ -3,13 +3,16 @@ const cataasURL = "https://cataas.com";
 document.addEventListener("DOMContentLoaded", prepareListeners);
 
 let lastRowImagesClicked = 0;
+let lastRowURLs = [];
+const ROW_SIZE = 5;
 
 // Sets up listeners
 function prepareListeners() {
+    loadNextRow();
+
     const randomCatButtons = document.querySelectorAll(".randomCatButtons");
     randomCatButtons.forEach(button => {
       button.addEventListener("click", handleRandomCat);
-      button.addEventListener("click", addNewRow);
     });
     const searchBarElement = document.getElementById("searchForm");
     searchBarElement.addEventListener("submit", handleSearch);
@@ -34,18 +37,38 @@ function handleSearch (event) {
 
 async function handleRandomCat(event) {
     const imgContainer = event.currentTarget;
+    console.log(lastRowImagesClicked);
     if (imgContainer.imgCreated) {
       return;
     }
+
     imgContainer.imgCreated = true;
     lastRowImagesClicked++;
     const img = document.createElement("img");
-    img.src = await getCatURL();
+    img.src = lastRowURLs.shift();
     img.classList.add("randomCatImage");
     imgContainer.appendChild(img);
+    if (lastRowImagesClicked === 5) {
+      addNewRow();
+    }
+    if (lastRowImagesClicked == 3) {
+      await loadNextRow();
+    }
 }
 
-async function getCatURL() {
+async function loadNextRow() {
+    const gifIndex = (Math.floor(Math.random() * ROW_SIZE)); // random number from 0-4
+    console.log("gif index: " + gifIndex);
+    for (let i = 0; i < ROW_SIZE; i++) {
+        if (i === gifIndex) {
+          lastRowURLs.push(await getCatGifURL());
+        } else {
+          lastRowURLs.push(await getCatPictureURL());
+        }
+    }
+}
+
+async function getCatPictureURL() {
     try {
         const res = await fetch(cataasURL + "/cat?type=square&json=true");
 
@@ -60,17 +83,30 @@ async function getCatURL() {
     }
 }
 
+async function getCatGifURL() {
+    try {
+        const res = await fetch(cataasURL + "/cat/gif?type=square&json=true");
+
+        if (!res.ok) {
+            throw new Error(`HTTP error: status ${res.status}`);
+        }
+
+        const data = await res.json();
+        return data.url;
+    } catch (err) {
+        console.error("Fetch failed:", err.message);
+    }
+}
+
 function addNewRow() {
     console.log(lastRowImagesClicked);
-    if (lastRowImagesClicked !== 5) return
     const randomCatContainer = document.querySelector(".randomCatContainer");
     const row = document.createElement("div");
     row.classList.add("randomCatButtonRow");
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < ROW_SIZE; i++) {
       const button = document.createElement("button");
       button.classList.add("randomCatButtons");
       button.addEventListener("click", handleRandomCat);
-      button.addEventListener("click", addNewRow);
       row.appendChild(button);
     }
     randomCatContainer.appendChild(row);
